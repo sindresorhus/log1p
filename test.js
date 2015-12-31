@@ -1,22 +1,21 @@
-'use strict';
-var test = require('ava');
-var numberIsNan = require('number-is-nan');
-var positiveZero = require('positive-zero');
-var negativeZero = require('negative-zero');
-var floatEqual = require('float-equal');
-Math.log1p = undefined;
-var log1p = require('./');
+import test from 'ava';
+import numberIsNan from 'number-is-nan';
+import positiveZero from 'positive-zero';
+import negativeZero from 'negative-zero';
+import floatEqual from 'float-equal';
 
-test(function (t) {
-	t.assert(numberIsNan(log1p(NaN)));
-	t.assert(numberIsNan(log1p(-1.000000001)));
-	t.assert(positiveZero(log1p(0)));
-	t.assert(negativeZero(log1p(-0)));
-	t.assert(log1p(Infinity) === Infinity);
-	t.assert(log1p(-1) === -Infinity);
-	t.assert(log1p(-1e-17) === -1e-17);
-	t.assert(log1p(-2e-17) === -2e-17);
-	t.assert(floatEqual(log1p(5), 1.791759469228055));
-	t.assert(floatEqual(log1p(50), 3.9318256327243257));
-	t.end();
+Math.log1p = undefined;
+const m = require('./');
+
+test(t => {
+	t.true(numberIsNan(m(NaN)));
+	t.true(numberIsNan(m(-1.000000001)));
+	t.true(positiveZero(m(0)));
+	t.true(negativeZero(m(-0)));
+	t.is(m(Infinity), Infinity);
+	t.is(m(-1), -Infinity);
+	t.is(m(-1e-17), -1e-17);
+	t.is(m(-2e-17), -2e-17);
+	t.true(floatEqual(m(5), 1.791759469228055));
+	t.true(floatEqual(m(50), 3.9318256327243257));
 });
