@@ -1,6 +1,6 @@
 {
   "name": "log1p",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ES2015 Math.log1p() ponyfill",
   "license": "MIT",
   "repository": "sindresorhus/log1p",
