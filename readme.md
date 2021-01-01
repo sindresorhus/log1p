@@ -1,4 +1,4 @@
-# log1p [![Build Status](https://travis-ci.org/sindresorhus/log1p.svg?branch=master)](https://travis-ci.org/sindresorhus/log1p)
+# log1p
 
 > ES2015 [`Math.log1p()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log1p) [ponyfill](https://ponyfill.com)
 
